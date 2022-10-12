@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import 'normalize.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-tabs/style/react-tabs.css';
 import './App.css';
+import {PRODUCTS_DATA} from "./data/data";
+import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <Tabs>
+        <TabList>
+            <Tab>bluetooth earbuds</Tab>
+            <Tab>Apple airpods</Tab>
+            <Tab>Samsung earbuds</Tab>
+            <Tab>Huawei freebuds</Tab>
+            <Tab>OnePlus Buds</Tab>
+        </TabList>
+
+        <TabPanel>
+            <h1>all wireless headphones</h1>
+        </TabPanel>
+  </Tabs>
 }
 
 export default App;
