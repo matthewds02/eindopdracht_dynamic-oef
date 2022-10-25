@@ -2,8 +2,9 @@ import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-tabs/style/react-tabs.css';
 import './App.css';
-import {PRODUCTS_DATA} from "./data/data";
+import {PRODUCTS_DATA, PICTURES_AIRPODS} from "./data/data";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import {ApplePage} from "./pages/ApplePage";
 
 function App() {
   return <Tabs>
@@ -19,7 +20,7 @@ function App() {
             <h1>all wireless headphones</h1>
         </TabPanel>
         <TabPanel>
-            <h1>all wireless headphones</h1>
+            <ApplePage airpods={PICTURES_AIRPODS}/>
         </TabPanel>
   </Tabs>
 }

@@ -7,7 +7,7 @@ export const PRODUCTS_DATA = [
     {name: "cava", price: 3},
 ];
 
-const PICTURES_AIRPODS = [
+export const PICTURES_AIRPODS = [
     {
         id: 1,
         credit: "https://unsplash.com/photos/qFJR0wI2ITM",
