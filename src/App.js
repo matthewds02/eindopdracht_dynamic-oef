@@ -18,6 +18,9 @@ function App() {
         <TabPanel>
             <h1>all wireless headphones</h1>
         </TabPanel>
+        <TabPanel>
+            <h1>all wireless headphones</h1>
+        </TabPanel>
   </Tabs>
 }
 
