@@ -1,12 +1,3 @@
-export const PRODUCTS_DATA = [
-    {name: "cola", price: 1 },
-    {name: "water", price: 1, note: "plat of bruisend"},
-    {name: "bier", price: 1, size: 25},
-    {name: "bier groot", price: 1, size: 33},
-    {name: "wijn", price: 2, note:"rood, wit of rosé"},
-    {name: "cava", price: 3},
-];
-
 export const PICTURES_AIRPODS = [
     {
         id: 1,
@@ -31,7 +22,7 @@ export const PICTURES_AIRPODS = [
         credit: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.esquire.com%2Flifestyle%2Fa39496862%2Fairpods-max-review-endorsement%2F&psig=AOvVaw2cRiDV8p2uNgsvCGAHllNG&ust=1666794627482000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCNiYjIDM-_oCFQAAAAAdAAAAABAK",
         author: "Timothy Mulcare",
         name: "airpods max.jpg"
-    },
+    }
 ];
 
 export const PICTURES_GALAXYBUDS = [
@@ -64,7 +55,7 @@ export const PICTURES_GALAXYBUDS = [
         credit: "https://elektrozine.be/review-samsung-galaxy-buds-draadloze-oortjes/",
         author: "Ruud Van Der Heyden",
         name: "galaxy Buds+.jpeg"
-    },
+    }
 ];
 export const PICTURES_HUAWEIBUDS = [
     {
@@ -114,5 +105,31 @@ export const PICTURES_HUAWEIBUDS = [
         credit: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bol.com%2Fbe%2Fnl%2Fp%2Fhuawei-freelace-pro-earphones-graphite-black%2F9300000013173480%2F&psig=AOvVaw2ype32uAEc2EUIwPVFGiAe&ust=1667925756226000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCJCC6ePBnPsCFQAAAAAdAAAAABAH",
         author: "Bol.com",
         name: "Huawei FreeLace Pro.jpg"
+    }
+];
+export const PICTURES_ONEPLUSBUDS = [
+    {
+        id: 1,
+        credit: "https://www.mytrendyphone.be/shop/oneplus-nord-buds-true-wireless-oortelefoon-288754p.html",
+        author: "MyTrendyPhone",
+        name: "OnePlus Nord Buds.jpg"
     },
+    {
+        id: 2,
+        credit: "https://www.nl.fnac.be/OnePlus-Buds-Z-Werkelijk-draadloze-koptelefoon-met-micro-inwendig-Bluetooth-wit/a15825483",
+        author: "Fnac",
+        name: "OnePlus Buds Z.jpg"
+    },
+    {
+        id: 3,
+        credit: "https://www.nl.fnac.be/ONEPLUS-BUDS-Z-2/a16437370?origin=SEA_GOO_PLA_SMASNDNL&gclid=CjwKCAiAnZCdBhBmEiwA8nDQxSrfruA9nOdEVaK9lVgq8IuX0xR9gZA2wkq2OUDRRwYfIP2lhnBHCBoCcUwQAvD_BwE&gclsrc=aw.ds",
+        author: "Fnac",
+        name: "OnePlus Buds Z2.jpg"
+    },
+    {
+        id: 4,
+        credit: "https://www.gadgetgear.nl/2021/08/review-oneplus-buds-pro-definieren-het-middensegment/",
+        author: "Arjan Olsder",
+        name: "OnePlus Buds Pro.jpg"
+    }
 ];
