@@ -33,3 +33,86 @@ export const PICTURES_AIRPODS = [
         name: "airpods max.jpg"
     },
 ];
+
+export const PICTURES_GALAXYBUDS = [
+    {
+        id: 1,
+        credit: "https://www.amazon.com/Wireless-Cancelling-Charging-Included-International/dp/B08WWRYM92?th=1",
+        author: "Amazon",
+        name: "galaxy Buds Pro.jpg"
+    },
+    {
+        id: 2,
+        credit: "https://www.bol.com/be/nl/p/samsung-galaxy-buds-2-pro-noise-cancelling-gray/9300000114127731/",
+        author: "Bol.com",
+        name: "galaxy Buds2 Pro.jpg"
+    },
+    {
+        id: 3,
+        credit: "https://hum3d.com/3d-models/samsung-galaxy-buds-2-graphite/",
+        author: "Hum3D",
+        name: "Samsung Galaxy Buds2.jpg"
+    },
+    {
+        id: 4,
+        credit: "https://www.androidheadlines.com/2020/08/samsung-galaxy-buds-live.html",
+        author: "Justin Diaz",
+        name: "galaxy Buds Live.jpg"
+    },
+    {
+        id: 5,
+        credit: "https://elektrozine.be/review-samsung-galaxy-buds-draadloze-oortjes/",
+        author: "Ruud Van Der Heyden",
+        name: "galaxy Buds+.jpeg"
+    },
+];
+export const PICTURES_HUAWEIBUDS = [
+    {
+        id: 1,
+        credit: "https://consumer.huawei.com/be/headphones/freebuds-pro-2/specs/",
+        author: "Huawei Consumer",
+        name: "Huawei FreeBuds Pro2.png"
+    },
+    {
+        id: 2,
+        credit: "https://consumer.huawei.com/en/headphones/freebuds-lipstick/specs/",
+        author: "Huawei Consumer",
+        name: "Huawei FreeBuds Lipstick.png"
+    },
+    {
+        id: 3,
+        credit: "https://consumer.huawei.com/ca/headphones/freebuds-pro/",
+        author: "Huawei Consumer",
+        name: "Huawei FreeBuds Pro.jpg"
+    },
+    {
+        id: 4,
+        credit: "https://consumer.huawei.com/be/headphones/",
+        author: "Huawei Consumer",
+        name: "Huawei FreeBuds 4.png"
+    },
+    {
+        id: 5,
+        credit: "https://www.cerato.be/accessoires/headsets/huawei-freebuds-4i-wireless-earphones-white/",
+        author: "Cerato",
+        name: "Huawei FreeBuds 4i.jpg"
+    },
+    {
+        id: 6,
+        credit: "https://onlinehesqatar.com/huawei-freebuds-se.html",
+        author: "Intertec",
+        name: "Huawei FreeBuds Se.jpg"
+    },
+    {
+        id: 7,
+        credit: "https://consumer.huawei.com/ae-en/headphones/freelace-lite/buy/",
+        author: "Huawei Consumer",
+        name: "Huawei FreeLace Lite.png"
+    },
+    {
+        id: 8,
+        credit: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bol.com%2Fbe%2Fnl%2Fp%2Fhuawei-freelace-pro-earphones-graphite-black%2F9300000013173480%2F&psig=AOvVaw2ype32uAEc2EUIwPVFGiAe&ust=1667925756226000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCJCC6ePBnPsCFQAAAAAdAAAAABAH",
+        author: "Bol.com",
+        name: "Huawei FreeLace Pro.jpg"
+    },
+];

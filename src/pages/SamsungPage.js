@@ -1,9 +1,9 @@
-export function ApplePage(props) {
-    const {airpods} = props;
+export function SamsungPage(props) {
+    const {galaxyBuds} = props;
     return (
         <div>
-            <h1>Apple Airpods</h1>
-            {airpods.map(p => <Picture key={p.id} picture={p} />)}
+            <h1>Galaxy Buds</h1>
+            {galaxyBuds.map(p => <Picture key={p.id} picture={p} />)}
         </div>
     );
 }

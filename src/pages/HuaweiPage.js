@@ -1,9 +1,9 @@
-export function ApplePage(props) {
-    const {airpods} = props;
+export function HuaweiPage(props) {
+    const {huaweiBuds} = props;
     return (
         <div>
-            <h1>Apple Airpods</h1>
-            {airpods.map(p => <Picture key={p.id} picture={p} />)}
+            <h1>Huawei FreeBuds</h1>
+            {huaweiBuds.map(p => <Picture key={p.id} picture={p} />)}
         </div>
     );
 }

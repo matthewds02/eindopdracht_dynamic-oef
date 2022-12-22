@@ -2,9 +2,11 @@ import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-tabs/style/react-tabs.css';
 import './App.css';
-import {PRODUCTS_DATA, PICTURES_AIRPODS} from "./data/data";
+import {PRODUCTS_DATA, PICTURES_AIRPODS, PICTURES_GALAXYBUDS, PICTURES_HUAWEIBUDS} from "./data/data";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import {ApplePage} from "./pages/ApplePage";
+import {SamsungPage} from "./pages/SamsungPage";
+import {HuaweiPage} from "./pages/HuaweiPage";
 
 function App() {
   return <Tabs>
@@ -21,6 +23,12 @@ function App() {
         </TabPanel>
         <TabPanel>
             <ApplePage airpods={PICTURES_AIRPODS}/>
+        </TabPanel>
+        <TabPanel>
+            <SamsungPage galaxyBuds={PICTURES_GALAXYBUDS}/>
+        </TabPanel>
+        <TabPanel>
+            <HuaweiPage huaweiBuds={PICTURES_HUAWEIBUDS}/>
         </TabPanel>
   </Tabs>
 }
