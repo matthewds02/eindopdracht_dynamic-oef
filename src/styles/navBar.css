@@ -21,28 +21,18 @@
     font-size: 1.2rem;
     padding: 10px;
     border-radius: 5px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.8s ease;
     background-color: #333;
 }
 
-.nav-link:hover {
-    background-color: #555;
+.selected {
+    background-color: #a4a4a4;
+    color: black;
+    cursor: default;
 }
 
-
-.window {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    min-height: calc(100vh - 9rem);  /* subtract the top and bottom margins */
-    min-width: 940px;
-    width: 70%;
-    max-width: 1500px;
-    padding: 2rem;
-    margin: 0 auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+.nav-link:hover {
+    background-color: #a4a4a4;
 }
 
 
