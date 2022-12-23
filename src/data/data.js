@@ -3,7 +3,7 @@ export const PICTURES_AIRPODS = [
         id: 1,
         credit: "https://unsplash.com/photos/qFJR0wI2ITM",
         author: "Filipe Alves",
-        name: "filipe-alves-qFJR0wI2ITM-unsplash.jpg"
+        name: "airpods.jpg"
     },
     {
         id: 2,

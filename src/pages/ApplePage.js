@@ -1,21 +1,25 @@
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import '../styles/products.css';
+import ProductCard from '../components/ProductsCard';
+
 export function ApplePage(props) {
     const {airpods} = props;
+
     return (
-        <div>
-            <h1>Apple Airpods</h1>
-            {airpods.map(p => <Picture key={p.id} picture={p} />)}
-        </div>
+        <Container>
+            <Row className="my-4">
+                <Col>
+                    <h1>Apple Airpods</h1>
+                </Col>
+            </Row>
+            <Row>
+                {airpods.map(product => (
+                    <Col xs={12} md={6} lg={4} key={product.id} className="text-center">
+                        <ProductCard product={product} />
+                    </Col>
+                ))}
+            </Row>
+        </Container>
     );
-}
-
-function Picture(props) {
-    const { picture } = props;
-
-    return <>
-        <img src={`images/${picture.name}`}
-             alt={picture.name}
-             width="45%"
-             style={{margin: "2vw auto 0 auto"}}/>
-        by <a href={picture.credit}>{picture.author}</a>
-    </>
 }
