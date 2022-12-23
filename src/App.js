@@ -2,6 +2,7 @@ import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-tabs/style/react-tabs.css';
 import './App.css';
+import './styles/navBar.css';
 import {
     PICTURES_AIRPODS,
     PICTURES_GALAXYBUDS,
@@ -16,29 +17,55 @@ import {OnePlusPage} from "./pages/OnePlusPage";
 
 function App() {
   return <Tabs>
-        <TabList>
-            <Tab>bluetooth earbuds</Tab>
-            <Tab>Apple airpods</Tab>
-            <Tab>Samsung earbuds</Tab>
-            <Tab>Huawei freebuds</Tab>
-            <Tab>OnePlus Buds</Tab>
-        </TabList>
+      <div className="nav-container">
+          <TabList>
+              <Tab className="nav-item">
+                  <a href="#" className="nav-link">
+                      Bluetooth earbuds
+                  </a>
+              </Tab>
+              <Tab className="nav-item">
+                  <a href="#" className="nav-link">
+                      Apple AirPods
+                  </a>
+              </Tab>
+              <Tab className="nav-item">
+                  <a href="#" className="nav-link">
+                      Samsung earbuds
+                  </a>
+              </Tab>
+              <Tab className="nav-item">
+                  <a href="#" className="nav-link">
+                      Huawei Freebuds
+                  </a>
+              </Tab>
+              <Tab className="nav-item">
+                  <a href="#" className="nav-link">
+                      OnePlus Buds
+                  </a>
+              </Tab>
+          </TabList>
+      </div>
 
-        <TabPanel>
-            <h1>all wireless headphones</h1>
-        </TabPanel>
-        <TabPanel>
-            <ApplePage airpods={PICTURES_AIRPODS}/>
-        </TabPanel>
-        <TabPanel>
-            <SamsungPage galaxyBuds={PICTURES_GALAXYBUDS}/>
-        </TabPanel>
-        <TabPanel>
-            <HuaweiPage huaweiBuds={PICTURES_HUAWEIBUDS}/>
-        </TabPanel>
-      <TabPanel>
-          <OnePlusPage onePlusBuds={PICTURES_ONEPLUSBUDS}/>
-      </TabPanel>
+
+
+      <div className="window">
+          <TabPanel>
+              <h1>all wireless headphones</h1>
+          </TabPanel>
+          <TabPanel>
+              <ApplePage airpods={PICTURES_AIRPODS} />
+          </TabPanel>
+          <TabPanel>
+              <SamsungPage galaxyBuds={PICTURES_GALAXYBUDS} />
+          </TabPanel>
+          <TabPanel>
+              <HuaweiPage huaweiBuds={PICTURES_HUAWEIBUDS} />
+          </TabPanel>
+          <TabPanel>
+              <OnePlusPage onePlusBuds={PICTURES_ONEPLUSBUDS} />
+          </TabPanel>
+      </div>
   </Tabs>
 }
 
