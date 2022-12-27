@@ -17,6 +17,7 @@ import {SamsungPage} from "./pages/SamsungPage";
 import {HuaweiPage} from "./pages/HuaweiPage";
 import {OnePlusPage} from "./pages/OnePlusPage";
 import { useState } from 'react';
+import {HomePage} from "./pages/HomePage";
 
 function App() {
     const [selectedIndex, setSelectedIndex] = useState(0); // Initialiseer de state met de index van de huidige tab
@@ -56,7 +57,7 @@ function App() {
 
       <div className="window">
           <TabPanel>
-              <h1>all wireless headphones</h1>
+              <HomePage/>
           </TabPanel>
           <TabPanel>
               <ApplePage airpods={PICTURES_AIRPODS} />

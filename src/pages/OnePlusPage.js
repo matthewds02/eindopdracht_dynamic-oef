@@ -15,7 +15,7 @@ export function OnePlusPage(props) {
             </Row>
             <Row>
                 {onePlusBuds.map(product => (
-                    <Col xs={12} md={6} lg={4} key={product.id} className="text-center">
+                    <Col xs={12} md={6} lg={4} key={product.id} className="product-card-parent text-center">
                         <ProductCard product={product} />
                     </Col>
                 ))}

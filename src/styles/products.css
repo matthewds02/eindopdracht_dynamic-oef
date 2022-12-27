@@ -1,7 +1,12 @@
+.product-card-parent {
+    margin-bottom: 24px;
+    display: grid;
+}
+
 .product-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 1rem;
-    height: 540px;
+    margin: 0!important;
 }
 
 .product-card:hover {
@@ -30,7 +35,7 @@
 }
 
 .product-info {
-    height: 25%;
+    padding-top: 10px;
     min-width: 255px;
 }
 

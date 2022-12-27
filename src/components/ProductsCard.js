@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 function ProductCard(props) {
     const { product } = props;
@@ -23,3 +24,7 @@ function ProductCard(props) {
 }
 
 export default ProductCard;
+
+ProductCard.propTypes = {
+    products: PropTypes.arrayOf(PropTypes.object)
+}
