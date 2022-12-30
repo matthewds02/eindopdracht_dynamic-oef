@@ -1,5 +1,4 @@
 import React from 'react';
-import {Col} from 'react-bootstrap';
 import '../styles/products.css';
 import ProductCard from '../components/ProductsCard';
 import {Section} from "./Section";
@@ -7,11 +6,7 @@ import {Section} from "./Section";
 function Headset(props) {
     const {headset} = props;
 
-    return <>
-        <Col xs={12} md={6} lg={4} key={headset.id} className="product-card-parent text-center">
-            <ProductCard product={headset}/>
-        </Col>
-    </>
+    return <ProductCard product={headset}/>;
 }
 
 export function Headsets(props) {
