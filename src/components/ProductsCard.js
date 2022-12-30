@@ -24,11 +24,6 @@ function RenderAddToCartButton({product = {}}) {
     );
 }
 
-RenderAddToCartButton.displayName = "RenderAddToCartButton";
-RenderAddToCartButton.propTypes = {
-    product: PropTypes.object,
-};
-
 /**
  * Rendert een kaart voor een product
  */
