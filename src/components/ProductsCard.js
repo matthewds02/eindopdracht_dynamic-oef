@@ -2,11 +2,39 @@ import React from 'react';
 import PropTypes from "prop-types";
 import {Col} from "react-bootstrap";
 
-function ProductCard(props) {
-    const {product} = props;
+/**
+ * Rendert de "Voeg toe aan winkelwagen" knop voor een product.
+ * Als het product een prijs heeft, is de knop ingeschakeld.
+ * Zo niet, dan is de knop uitgeschakeld en wordt "Niet beschikbaar" weergegeven.
+ */
+function RenderAddToCartButton({product = {}}) {
+    // Controleert of het product een prijs heeft
+    if (product.price) {
+        return (
+            <button className="add-to-cart-button btn btn-secondary btn-sm mt-3">
+                Add to Cart
+            </button>
+        );
+    }
 
-    // Extract the name of the product without the file extension
-    const name = product.name.split('.')[0];
+    return (
+        <button className="add-to-cart-button btn btn-secondary btn-sm mt-3" disabled>
+            Not available
+        </button>
+    );
+}
+
+RenderAddToCartButton.displayName = "RenderAddToCartButton";
+RenderAddToCartButton.propTypes = {
+    product: PropTypes.object,
+};
+
+/**
+ * Rendert een kaart voor een product
+ */
+function ProductCard({product = {}}) {
+    // Haalt de naam van het product op zonder de bestandsextensie
+    const name = product.name.split(".")[0];
 
     return (
         <Col xs={12} md={6} lg={4} key={product.id} className="product-card-parent text-center">
@@ -17,23 +45,15 @@ function ProductCard(props) {
                 <div className="product-info">
                     <h2 className="title">{name}</h2>
                     <p>{product.price}</p>
-                    {product.price ? (
-                        <button className="add-to-cart-button btn btn-secondary btn-sm mt-3">
-                            Add to Cart
-                        </button>
-                    ) : (
-                        <button className="add-to-cart-button btn btn-secondary btn-sm mt-3" disabled>
-                            Not available
-                        </button>
-                    )}
+                    <RenderAddToCartButton product={product}/>
                 </div>
             </div>
         </Col>
     );
 }
 
-export default ProductCard;
-
 ProductCard.propTypes = {
-    products: PropTypes.arrayOf(PropTypes.object)
-}
+    product: PropTypes.object,
+};
+
+export default ProductCard;
