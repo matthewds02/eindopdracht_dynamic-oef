@@ -8,21 +8,18 @@ import {Col} from "react-bootstrap";
  * Zo niet, dan is de knop uitgeschakeld en wordt "Niet beschikbaar" weergegeven.
  */
 function RenderAddToCartButton({product = {}}) {
-    // Controleert of het product een prijs heeft
-    if (product.price) {
-        return (
-            <button className="add-to-cart-button btn btn-secondary btn-sm mt-3">
-                Add to Cart
-            </button>
-        );
-    }
-
-    return (
+    // Gebruik de ternary operator om te controleren of het product een prijs heeft
+    return product.price ? (
+        <button className="add-to-cart-button btn btn-secondary btn-sm mt-3">
+            Add to Cart
+        </button>
+    ) : (
         <button className="add-to-cart-button btn btn-secondary btn-sm mt-3" disabled>
             Not available
         </button>
     );
 }
+
 
 /**
  * Rendert een kaart voor een product
