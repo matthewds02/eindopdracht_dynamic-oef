@@ -1,0 +1,33 @@
+.sidebar {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 300px;
+    background-color: white;
+    transition: all 0.8s ease-in-out;
+}
+
+.sidebar-content {
+    position: fixed;
+    left: -100px;
+    transition: all 0.8s ease-in-out;
+}
+
+
+.expand-button {
+    position: fixed;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    transition: all 0.8s ease-in-out;
+}
+
+.sidebar.expanded .expand-button {
+    transform: translateX(calc(450%));
+    transition: all 0.8s ease-in-out;
+}
+
+.sidebar.expanded .sidebar-content {
+    transform: translateX(calc(100px));
+    transition: all 0.8s ease-in-out;
+}
