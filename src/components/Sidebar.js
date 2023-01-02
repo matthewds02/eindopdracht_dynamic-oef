@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import '../styles/Sidebar.css';
+import {FaAngleDoubleRight} from "react-icons/fa";
 
 export function Sidebar() {
     // Gebruik de useState-hook om de uitgeklapte staat van de zijbalk te beheren
@@ -8,12 +9,13 @@ export function Sidebar() {
     return (
         <div className={`sidebar${isExpanded ? " expanded" : ""}`}>
             {/* Render de uitschuifknop */}
-            <button className={"expand-button"} onClick={() => setIsExpanded(!isExpanded)}>
-                {isExpanded ? "Close" : "Open"}
-            </button>
+            <div className={"expand-button"} onClick={() => setIsExpanded(!isExpanded)}>
+                <FaAngleDoubleRight className={`icon${isExpanded ? " expanded" : ""}`}/>
+            </div>
 
             <div className="sidebar-content">
-                <h1>Hallo</h1>
+                <p>Beschikbaar:</p>
+                <button>Hallo</button>
             </div>
         </div>
     );
