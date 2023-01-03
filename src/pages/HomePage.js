@@ -1,21 +1,21 @@
-import React, {useState} from 'react';
 import '../styles/products.css';
-import {Col, Row} from "react-bootstrap";
 import Headsets from "../components/Headsets";
 import availableHeadsets from "../utilities/filteredUtilities";
 import Sidebar from "../components/Sidebar";
 import {useCollectionFromDatabase} from "../components/CollectionDatabase";
 import filteredHeadsets from "../utilities/filteredHeadsets";
+import React, {useState} from 'react';
+import {Col, Row} from "react-bootstrap";
 
 // Deze functie retourneert een rij met een Headsets-component
 function HeadsetRow(props) {
-    const {headsets, title, isAvailable} = props;
+    const {headsets, title, isAvailable, setCart} = props;
     return (
         <Row>
             {isAvailable ?
-                <Headsets headsets={availableHeadsets(headsets)} title={title}/>
+                <Headsets headsets={availableHeadsets(headsets)} title={title} setCart={setCart}/>
                 :
-                <Headsets headsets={headsets} title={title}/>
+                <Headsets headsets={headsets} title={title} setCart={setCart}/>
             }
 
         </Row>
@@ -23,7 +23,8 @@ function HeadsetRow(props) {
 }
 
 // De HomePage-functie retourneert de hoofdpagina van de applicatie
-export function HomePage() {
+function HomePage(props) {
+    const {setCart} = props;
     // Gebruik een extra useState-hook voor de beschikbaarheid
     const [isAvailable, setIsAvailable] = useState(false);
     const [search, setSearch] = useState(""); // Nieuwe useState hook voor de zoekbalk
@@ -55,7 +56,10 @@ export function HomePage() {
                 headsets={filteredHeadsets(row.headsets, search)}
                 title={row.title}
                 isAvailable={isAvailable}
+                setCart={setCart}
             />
         ))}
     </>
 }
+
+export default HomePage;

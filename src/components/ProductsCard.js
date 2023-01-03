@@ -7,7 +7,8 @@ import cuttedProductName from "../utilities/cuttedProductName";
 /**
  * Rendert een kaart voor een product
  */
-function ProductCard({product = {}}) {
+function ProductCard(props) {
+    const {product, setCart} = props;
     return (
         <Col xs={12} md={6} lg={4} key={product.id} className="product-card-parent text-center">
             <div className="product-card my-4 d-flex flex-column">
@@ -17,7 +18,7 @@ function ProductCard({product = {}}) {
                 <div className="product-info">
                     <h2 className="title">{cuttedProductName(product.name)}</h2>
                     <p>{product.price}</p>
-                    <RenderAddToCartButton product={product}/>
+                    <RenderAddToCartButton product={product} setCart={setCart}/>
                 </div>
             </div>
         </Col>

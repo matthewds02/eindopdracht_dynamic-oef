@@ -5,22 +5,25 @@ import './App.css';
 import './styles/navBar.css';
 import './styles/mainPage.css';
 import './services/firestore';
-import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import {ToastContainer} from "react-toastify";
-import React, {useState} from 'react';
-import {ApplePage} from "./pages/ApplePage";
-import {SamsungPage} from "./pages/SamsungPage";
-import {HuaweiPage} from "./pages/HuaweiPage";
-import {OnePlusPage} from "./pages/OnePlusPage";
-import {HomePage} from "./pages/HomePage";
+import ApplePage from "./pages/ApplePage";
+import SamsungPage from "./pages/SamsungPage";
+import HuaweiPage from "./pages/HuaweiPage";
+import OnePlusPage from "./pages/OnePlusPage";
+import HomePage from "./pages/HomePage";
+import CartPage from "./pages/CartPage";
 import {useCollectionFromDatabase} from './components/CollectionDatabase';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import React, {useState} from 'react';
+import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import {ToastContainer} from "react-toastify";
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 
 function App() {
     const [selectedIndex, setSelectedIndex] = useState(0); // Initialiseer de state met de index van de huidige tab
     const {airpodsValues, galaxyBudsValues, huaweiBudsValues, oneplusBudsValues} = useCollectionFromDatabase();
+    const [cart, setCart] = useState([]);
 
+    console.log(cart);
     return <Tabs selectedIndex={selectedIndex} onSelect={setSelectedIndex}>
         <div className="nav-container">
             <TabList>
@@ -61,22 +64,22 @@ function App() {
 
       <div className="window">
           <TabPanel>
-              <HomePage/>
+              <HomePage setCart={setCart}/>
           </TabPanel>
           <TabPanel>
-              <ApplePage airpods={airpodsValues}/>
+              <ApplePage airpods={airpodsValues} setCart={setCart}/>
           </TabPanel>
           <TabPanel>
-              <SamsungPage galaxyBuds={galaxyBudsValues}/>
+              <SamsungPage galaxyBuds={galaxyBudsValues} setCart={setCart}/>
           </TabPanel>
           <TabPanel>
-              <HuaweiPage huaweiBuds={huaweiBudsValues}/>
+              <HuaweiPage huaweiBuds={huaweiBudsValues} setCart={setCart}/>
           </TabPanel>
           <TabPanel>
-              <OnePlusPage onePlusBuds={oneplusBudsValues}/>
+              <OnePlusPage onePlusBuds={oneplusBudsValues} setCart={setCart}/>
           </TabPanel>
           <TabPanel>
-              <OnePlusPage onePlusBuds={oneplusBudsValues}/>
+              <CartPage/>
           </TabPanel>
       </div>
         <ToastContainer/>
