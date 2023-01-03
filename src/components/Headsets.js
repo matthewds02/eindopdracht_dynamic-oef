@@ -5,12 +5,14 @@ import Section from "./Section";
 
 function Headsets(props) {
     const {headsets, title} = props;
+    const headsetsArray = headsets ? Object.values(headsets) : [];
 
-    return headsets.length > 0
+    return headsetsArray?.length > 0
         ? <Section title={title}>
-            {headsets.map(headset => <ProductCard key={headset.name} product={headset}/>)}
+            {headsetsArray.map(headset => <ProductCard key={headset.name} product={headset}/>)}
         </Section>
         : null;
 }
+
 
 export default Headsets;

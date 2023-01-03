@@ -5,7 +5,6 @@ import './App.css';
 import './styles/navBar.css';
 import './styles/mainPage.css';
 import './services/firestore';
-import {PICTURES_AIRPODS, PICTURES_GALAXYBUDS, PICTURES_HUAWEIBUDS, PICTURES_ONEPLUSBUDS} from "./data/data";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import {ToastContainer} from "react-toastify";
 import React, {useState} from 'react';
@@ -14,9 +13,11 @@ import {SamsungPage} from "./pages/SamsungPage";
 import {HuaweiPage} from "./pages/HuaweiPage";
 import {OnePlusPage} from "./pages/OnePlusPage";
 import {HomePage} from "./pages/HomePage";
+import {useGetCollectionFromDatabase} from './components/getCollectionFromDatabase';
 
 function App() {
     const [selectedIndex, setSelectedIndex] = useState(0); // Initialiseer de state met de index van de huidige tab
+    const {airpodsValues, galaxyBudsValues, huaweiBudsValues, oneplusBudsValues} = useGetCollectionFromDatabase();
 
     return <Tabs selectedIndex={selectedIndex} onSelect={setSelectedIndex}>
       <div className="nav-container">
@@ -56,16 +57,16 @@ function App() {
               <HomePage/>
           </TabPanel>
           <TabPanel>
-              <ApplePage airpods={PICTURES_AIRPODS} />
+              <ApplePage airpods={airpodsValues}/>
           </TabPanel>
           <TabPanel>
-              <SamsungPage galaxyBuds={PICTURES_GALAXYBUDS}/>
+              <SamsungPage galaxyBuds={galaxyBudsValues}/>
           </TabPanel>
           <TabPanel>
-              <HuaweiPage huaweiBuds={PICTURES_HUAWEIBUDS}/>
+              <HuaweiPage huaweiBuds={huaweiBudsValues}/>
           </TabPanel>
           <TabPanel>
-              <OnePlusPage onePlusBuds={PICTURES_ONEPLUSBUDS}/>
+              <OnePlusPage onePlusBuds={oneplusBudsValues}/>
           </TabPanel>
       </div>
       <ToastContainer/>
