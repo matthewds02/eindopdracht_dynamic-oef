@@ -3,7 +3,7 @@ import {useCollectionData} from 'react-firebase-hooks/firestore';
 import {firestoreDB} from '../services/firestore';
 import {firestoreConverter} from '../services/firestoreConverter';
 
-export const useGetCollectionFromDatabase = () => {
+export const useCollectionFromDatabase = () => {
     const collectionAirpodsRef = collection(firestoreDB, 'airpods').withConverter(firestoreConverter);
     const collectionGalaxyBudsRef = collection(firestoreDB, 'galaxybuds').withConverter(firestoreConverter);
     const collectionHuaweiBudsRef = collection(firestoreDB, 'huaweibuds').withConverter(firestoreConverter);

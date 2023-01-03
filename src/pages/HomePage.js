@@ -4,7 +4,7 @@ import {Col, Row} from "react-bootstrap";
 import Headsets from "../components/Headsets";
 import availableHeadsets from "../utilities/filteredUtilities";
 import Sidebar from "../components/Sidebar";
-import {useGetCollectionFromDatabase} from "../components/getCollectionFromDatabase";
+import {useCollectionFromDatabase} from "../components/CollectionDatabase";
 
 // Deze functie retourneert een rij met een Headsets-component
 function HeadsetRow(props) {
@@ -28,7 +28,7 @@ export function HomePage() {
     // Gebruik een extra useState-hook voor de beschikbaarheid
     const [isAvailable, setIsAvailable] = useState(false);
 
-    const {airpodsValues, galaxyBudsValues, huaweiBudsValues, oneplusBudsValues} = useGetCollectionFromDatabase();
+    const {airpodsValues, galaxyBudsValues, huaweiBudsValues, oneplusBudsValues} = useCollectionFromDatabase();
 
     // Maak een lijst met de gegevens voor elke rij
     const rows = [

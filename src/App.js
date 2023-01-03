@@ -13,11 +13,11 @@ import {SamsungPage} from "./pages/SamsungPage";
 import {HuaweiPage} from "./pages/HuaweiPage";
 import {OnePlusPage} from "./pages/OnePlusPage";
 import {HomePage} from "./pages/HomePage";
-import {useGetCollectionFromDatabase} from './components/getCollectionFromDatabase';
+import {useCollectionFromDatabase} from './components/CollectionDatabase';
 
 function App() {
     const [selectedIndex, setSelectedIndex] = useState(0); // Initialiseer de state met de index van de huidige tab
-    const {airpodsValues, galaxyBudsValues, huaweiBudsValues, oneplusBudsValues} = useGetCollectionFromDatabase();
+    const {airpodsValues, galaxyBudsValues, huaweiBudsValues, oneplusBudsValues} = useCollectionFromDatabase();
 
     return <Tabs selectedIndex={selectedIndex} onSelect={setSelectedIndex}>
       <div className="nav-container">
