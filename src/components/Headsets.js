@@ -6,7 +6,9 @@ import {Section} from "./Section";
 export function Headsets(props) {
     const {headsets, title} = props;
 
-    return <Section title={title}>
-        {headsets.map(headset => <ProductCard key={headset.name} product={headset}/>)}
-    </Section>;
+    return headsets.length > 0
+        ? <Section title={title}>
+            {headsets.map(headset => <ProductCard key={headset.name} product={headset}/>)}
+        </Section>
+        : null;
 }

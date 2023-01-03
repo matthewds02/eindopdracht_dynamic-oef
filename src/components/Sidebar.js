@@ -20,7 +20,7 @@ export function Sidebar(props) {
                     <p>Beschikbaarheid:</p>
                     {/* Pas de tekst van de button aan op basis van de waarde van de useState-hook */}
                     <button className="filterButton" style={{marginLeft: "10px"}}
-                            onClick={() => setIsAvailable(!isAvailable)}>{isAvailable ? "Ja" : "Nee"}</button>
+                            onClick={() => setIsAvailable(!isAvailable)}>{isAvailable ? "Nee" : "Ja"}</button>
                 </div>
             </div>
         </div>
