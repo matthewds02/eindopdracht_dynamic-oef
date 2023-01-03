@@ -2,7 +2,8 @@ import React, {useState} from "react";
 import '../styles/Sidebar.css';
 import {FaAngleDoubleRight} from "react-icons/fa";
 
-export function Sidebar() {
+export function Sidebar(props) {
+    const {isAvailable, setIsAvailable} = props;
     // Gebruik de useState-hook om de uitgeklapte staat van de zijbalk te beheren
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -14,9 +15,15 @@ export function Sidebar() {
             </div>
 
             <div className="sidebar-content">
-                <p>Beschikbaar:</p>
-                <button>Hallo</button>
+                <h1>Filter op:</h1>
+                <div style={{display: "flex", alignItems: "baseline"}}>
+                    <p>Beschikbaarheid:</p>
+                    {/* Pas de tekst van de button aan op basis van de waarde van de useState-hook */}
+                    <button className="filterButton" style={{marginLeft: "10px"}}
+                            onClick={() => setIsAvailable(!isAvailable)}>{isAvailable ? "Ja" : "Nee"}</button>
+                </div>
             </div>
         </div>
     );
+
 }

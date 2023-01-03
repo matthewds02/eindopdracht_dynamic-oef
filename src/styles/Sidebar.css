@@ -1,3 +1,14 @@
+h1 {
+    font-size: 1.5rem;
+}
+
+.filterButton {
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #333;
+}
+
 .sidebar {
     position: fixed;
     top: 50%;
@@ -8,9 +19,12 @@
 
 .sidebar-content {
     position: fixed;
-    left: -200px;
+    left: -290px;
     transition: all 1.2s ease-in-out;
-    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 90px;
 }
 
 
@@ -27,7 +41,7 @@
 }
 
 .sidebar.expanded .sidebar-content {
-    transform: translateX(200px);
+    transform: translateX(290px);
     transition: all 1.2s ease-in-out;
 }
 
