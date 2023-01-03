@@ -37,4 +37,9 @@
     transform: scale(1.1);
 }
 
+.cart {
+    position: fixed;
+    right: 0;
+}
+
 

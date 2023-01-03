@@ -14,16 +14,18 @@ import {HuaweiPage} from "./pages/HuaweiPage";
 import {OnePlusPage} from "./pages/OnePlusPage";
 import {HomePage} from "./pages/HomePage";
 import {useCollectionFromDatabase} from './components/CollectionDatabase';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 
 function App() {
     const [selectedIndex, setSelectedIndex] = useState(0); // Initialiseer de state met de index van de huidige tab
     const {airpodsValues, galaxyBudsValues, huaweiBudsValues, oneplusBudsValues} = useCollectionFromDatabase();
 
     return <Tabs selectedIndex={selectedIndex} onSelect={setSelectedIndex}>
-      <div className="nav-container">
-          <TabList>
-              <Tab className="nav-item">
-                  <a href="#" className={selectedIndex === 0 ? 'nav-link selected' : 'nav-link'}>
+        <div className="nav-container">
+            <TabList>
+                <Tab className="nav-item">
+                    <a href="#" className={selectedIndex === 0 ? 'nav-link selected' : 'nav-link'}>
                       Bluetooth earbuds
                   </a>
               </Tab>
@@ -37,17 +39,22 @@ function App() {
                       Samsung earbuds
                   </a>
               </Tab>
-              <Tab className="nav-item">
-                  <a href="#" className={selectedIndex === 3 ? 'nav-link selected' : 'nav-link'}>
-                      Huawei Freebuds
-                  </a>
-              </Tab>
-              <Tab className="nav-item">
-                  <a href="#" className={selectedIndex === 4 ? 'nav-link selected' : 'nav-link'}>
-                      OnePlus Buds
-                  </a>
-              </Tab>
-          </TabList>
+                <Tab className="nav-item">
+                    <a href="#" className={selectedIndex === 3 ? 'nav-link selected' : 'nav-link'}>
+                        Huawei Freebuds
+                    </a>
+                </Tab>
+                <Tab className="nav-item">
+                    <a href="#" className={selectedIndex === 4 ? 'nav-link selected' : 'nav-link'}>
+                        OnePlus Buds
+                    </a>
+                </Tab>
+                <Tab className="nav-item cart">
+                    <a href="#" className={selectedIndex === 5 ? 'nav-link selected' : 'nav-link'}>
+                        <FontAwesomeIcon icon={faShoppingCart}/>
+                    </a>
+                </Tab>
+            </TabList>
       </div>
 
 
@@ -68,8 +75,11 @@ function App() {
           <TabPanel>
               <OnePlusPage onePlusBuds={oneplusBudsValues}/>
           </TabPanel>
+          <TabPanel>
+              <OnePlusPage onePlusBuds={oneplusBudsValues}/>
+          </TabPanel>
       </div>
-      <ToastContainer/>
+        <ToastContainer/>
   </Tabs>
 }
 
