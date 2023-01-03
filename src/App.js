@@ -4,21 +4,21 @@ import 'react-tabs/style/react-tabs.css';
 import './App.css';
 import './styles/navBar.css';
 import './styles/mainPage.css';
-
+import './services/firestore';
 import {PICTURES_AIRPODS, PICTURES_GALAXYBUDS, PICTURES_HUAWEIBUDS, PICTURES_ONEPLUSBUDS} from "./data/data";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import {ToastContainer} from "react-toastify";
+import React, {useState} from 'react';
 import {ApplePage} from "./pages/ApplePage";
 import {SamsungPage} from "./pages/SamsungPage";
 import {HuaweiPage} from "./pages/HuaweiPage";
 import {OnePlusPage} from "./pages/OnePlusPage";
-import React, {useState} from 'react';
 import {HomePage} from "./pages/HomePage";
-import {ToastContainer} from "react-toastify";
 
 function App() {
     const [selectedIndex, setSelectedIndex] = useState(0); // Initialiseer de state met de index van de huidige tab
 
-  return <Tabs selectedIndex={selectedIndex} onSelect={setSelectedIndex}>
+    return <Tabs selectedIndex={selectedIndex} onSelect={setSelectedIndex}>
       <div className="nav-container">
           <TabList>
               <Tab className="nav-item">
