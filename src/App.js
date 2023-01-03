@@ -21,9 +21,8 @@ import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 function App() {
     const [selectedIndex, setSelectedIndex] = useState(0); // Initialiseer de state met de index van de huidige tab
     const {airpodsValues, galaxyBudsValues, huaweiBudsValues, oneplusBudsValues} = useCollectionFromDatabase();
-    const [cart, setCart] = useState([]);
+    const [cartHeadsets, setCartHeadsets] = useState([]);
 
-    console.log(cart);
     return <Tabs selectedIndex={selectedIndex} onSelect={setSelectedIndex}>
         <div className="nav-container">
             <TabList>
@@ -64,22 +63,22 @@ function App() {
 
       <div className="window">
           <TabPanel>
-              <HomePage setCart={setCart}/>
+              <HomePage setCartHeadsets={setCartHeadsets}/>
           </TabPanel>
           <TabPanel>
-              <ApplePage airpods={airpodsValues} setCart={setCart}/>
+              <ApplePage airpods={airpodsValues} setCartHeadsets={setCartHeadsets}/>
           </TabPanel>
           <TabPanel>
-              <SamsungPage galaxyBuds={galaxyBudsValues} setCart={setCart}/>
+              <SamsungPage galaxyBuds={galaxyBudsValues} setCartHeadsets={setCartHeadsets}/>
           </TabPanel>
           <TabPanel>
-              <HuaweiPage huaweiBuds={huaweiBudsValues} setCart={setCart}/>
+              <HuaweiPage huaweiBuds={huaweiBudsValues} setCartHeadsets={setCartHeadsets}/>
           </TabPanel>
           <TabPanel>
-              <OnePlusPage onePlusBuds={oneplusBudsValues} setCart={setCart}/>
+              <OnePlusPage onePlusBuds={oneplusBudsValues} setCartHeadsets={setCartHeadsets}/>
           </TabPanel>
           <TabPanel>
-              <CartPage/>
+              <CartPage cartHeadsets={cartHeadsets} setCartHeadsets={setCartHeadsets}/>
           </TabPanel>
       </div>
         <ToastContainer/>

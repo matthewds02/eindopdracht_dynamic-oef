@@ -3,9 +3,9 @@ import '../styles/products.css';
 import Headsets from "../components/Headsets";
 
 function SamsungPage(props) {
-    const {galaxyBuds, setCart} = props;
+    const {galaxyBuds, setCartHeadsets} = props;
 
-    return <Headsets headsets={galaxyBuds} title="Galaxy Buds" setCart={setCart}/>;
+    return <Headsets headsets={galaxyBuds} title="Galaxy Buds" setCartHeadsets={setCartHeadsets}/>;
 }
 
 export default SamsungPage;

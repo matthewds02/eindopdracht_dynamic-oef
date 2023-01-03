@@ -3,9 +3,9 @@ import '../styles/products.css';
 import Headsets from "../components/Headsets";
 
 function HuaweiPage(props) {
-    const {huaweiBuds, setCart} = props;
+    const {huaweiBuds, setCartHeadsets} = props;
 
-    return <Headsets headsets={huaweiBuds} title="Huawei FreeBuds" setCart={setCart}/>;
+    return <Headsets headsets={huaweiBuds} title="Huawei FreeBuds" setCartHeadsets={setCartHeadsets}/>;
 }
 
 export default HuaweiPage;

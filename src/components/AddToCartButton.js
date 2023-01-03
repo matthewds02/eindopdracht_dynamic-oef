@@ -9,10 +9,10 @@ import cuttedProductName from "../utilities/cuttedProductName";
  * Zo niet, dan is de knop uitgeschakeld en wordt "Niet beschikbaar" weergegeven.
  */
 function RenderAddToCartButton(props) {
-    const {product, setCart} = props;
+    const {product, setCartHeadsets} = props;
     const notify = () => {
         toast.success("Added to cart " + cuttedProductName(product.name));
-        setCart(prevCart => [...prevCart, product]); // Voeg het product toe aan de setCart usestate
+        setCartHeadsets(prevCart => [...prevCart, product]); // Voeg het product toe aan de setCartHeadsets usestate
     }
 // Gebruik de ternary operator om te controleren of het product een prijs heeft
     return product.price ? (

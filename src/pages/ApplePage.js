@@ -3,9 +3,9 @@ import '../styles/products.css';
 import Headsets from "../components/Headsets";
 
 function ApplePage(props) {
-    const {airpods, setCart} = props;
+    const {airpods, setCartHeadsets} = props;
 
-    return <Headsets headsets={airpods} title="Apple Airpods" setCart={setCart}/>;
+    return <Headsets headsets={airpods} title="Apple Airpods" setCartHeadsets={setCartHeadsets}/>;
 }
 
 export default ApplePage;
