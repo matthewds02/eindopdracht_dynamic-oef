@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import '../styles/Sidebar.css';
 import {FaAngleDoubleRight} from "react-icons/fa";
+import PropTypes from "prop-types";
 
-export function Sidebar(props) {
+function Sidebar(props) {
     const {isAvailable, setIsAvailable} = props;
     // Gebruik de useState-hook om de uitgeklapte staat van de zijbalk te beheren
     const [isExpanded, setIsExpanded] = useState(false);
@@ -25,5 +26,12 @@ export function Sidebar(props) {
             </div>
         </div>
     );
-
 }
+
+Sidebar.propTypes = {
+    isAvailable: PropTypes.bool.isRequired,
+    setIsAvailable: PropTypes.func.isRequired,
+};
+
+export default Sidebar;
+

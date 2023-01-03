@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/products.css';
-import {Headsets} from "../components/Headsets";
+import Headsets from "../components/Headsets";
 
 export function HuaweiPage(props) {
     const {huaweiBuds} = props;
