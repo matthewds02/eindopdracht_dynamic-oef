@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/products.css';
 import Section from "../components/Section";
 import ProductCard from "../components/ProductsCard";
+import BuyButton from "../components/BuyButton";
 
 function CartPage(props) {
     const {cartHeadsets, setCartHeadsets} = props;
@@ -9,6 +10,7 @@ function CartPage(props) {
         ? <Section title={"Cart"}>
             {cartHeadsets.map(headset => <ProductCard key={headset.name} product={headset}
                                                       setCartHeadsets={setCartHeadsets} cartHeadsets={cartHeadsets}/>)}
+            <BuyButton setCartHeadsets={setCartHeadsets} cartHeadsets={cartHeadsets}/>
         </Section>
         : <p>Your cart is empty</p>;
 }

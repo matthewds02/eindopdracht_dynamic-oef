@@ -19,9 +19,11 @@ function ProductCard(props) {
                 <div className="product-info">
                     <h2 className="title">{cuttedProductName(product.name)}</h2>
                     <p>{product.price}</p>
-                    {cartHeadsets ? (<RenderRemoveFromCartButton product={product} setCartHeadsets={setCartHeadsets}
-                                                                 cartHeadsets={cartHeadsets}/>) : (
-                        <RenderAddToCartButton product={product} setCartHeadsets={setCartHeadsets}/>)}
+                    {cartHeadsets ?
+                        (<RenderRemoveFromCartButton product={product} setCartHeadsets={setCartHeadsets}
+                                                     cartHeadsets={cartHeadsets}/>)
+                        :
+                        (<RenderAddToCartButton product={product} setCartHeadsets={setCartHeadsets}/>)}
                 </div>
             </div>
         </Col>
