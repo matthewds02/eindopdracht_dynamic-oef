@@ -5,19 +5,15 @@ import './App.css';
 import './styles/navBar.css';
 import './styles/mainPage.css';
 
-import {
-    PICTURES_AIRPODS,
-    PICTURES_GALAXYBUDS,
-    PICTURES_HUAWEIBUDS,
-    PICTURES_ONEPLUSBUDS
-} from "./data/data";
+import {PICTURES_AIRPODS, PICTURES_GALAXYBUDS, PICTURES_HUAWEIBUDS, PICTURES_ONEPLUSBUDS} from "./data/data";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import {ApplePage} from "./pages/ApplePage";
 import {SamsungPage} from "./pages/SamsungPage";
 import {HuaweiPage} from "./pages/HuaweiPage";
 import {OnePlusPage} from "./pages/OnePlusPage";
-import { useState } from 'react';
+import React, {useState} from 'react';
 import {HomePage} from "./pages/HomePage";
+import {ToastContainer} from "react-toastify";
 
 function App() {
     const [selectedIndex, setSelectedIndex] = useState(0); // Initialiseer de state met de index van de huidige tab
@@ -63,15 +59,16 @@ function App() {
               <ApplePage airpods={PICTURES_AIRPODS} />
           </TabPanel>
           <TabPanel>
-              <SamsungPage galaxyBuds={PICTURES_GALAXYBUDS} />
+              <SamsungPage galaxyBuds={PICTURES_GALAXYBUDS}/>
           </TabPanel>
           <TabPanel>
-              <HuaweiPage huaweiBuds={PICTURES_HUAWEIBUDS} />
+              <HuaweiPage huaweiBuds={PICTURES_HUAWEIBUDS}/>
           </TabPanel>
           <TabPanel>
-              <OnePlusPage onePlusBuds={PICTURES_ONEPLUSBUDS} />
+              <OnePlusPage onePlusBuds={PICTURES_ONEPLUSBUDS}/>
           </TabPanel>
       </div>
+      <ToastContainer/>
   </Tabs>
 }
 
