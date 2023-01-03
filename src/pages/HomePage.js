@@ -5,6 +5,7 @@ import Headsets from "../components/Headsets";
 import availableHeadsets from "../utilities/filteredUtilities";
 import Sidebar from "../components/Sidebar";
 import {useCollectionFromDatabase} from "../components/CollectionDatabase";
+import filteredHeadsets from "../utilities/filteredHeadsets";
 
 // Deze functie retourneert een rij met een Headsets-component
 function HeadsetRow(props) {
@@ -21,12 +22,11 @@ function HeadsetRow(props) {
     );
 }
 
-
-
 // De HomePage-functie retourneert de hoofdpagina van de applicatie
 export function HomePage() {
     // Gebruik een extra useState-hook voor de beschikbaarheid
     const [isAvailable, setIsAvailable] = useState(false);
+    const [search, setSearch] = useState(""); // Nieuwe useState hook voor de zoekbalk
 
     const {airpodsValues, galaxyBudsValues, huaweiBudsValues, oneplusBudsValues} = useCollectionFromDatabase();
 
@@ -40,7 +40,7 @@ export function HomePage() {
 
     return <>
         {/* Render de Sidebar-component */}
-        <Sidebar isAvailable={isAvailable} setIsAvailable={setIsAvailable}/>
+        <Sidebar isAvailable={isAvailable} setIsAvailable={setIsAvailable} search={search} setSearch={setSearch}/>
 
         {/* Render een rij met een koptekst */}
         <Row className="my-4">
@@ -52,11 +52,10 @@ export function HomePage() {
         {rows.map(row => (
             <HeadsetRow
                 key={row.title}
-                headsets={row.headsets}
+                headsets={filteredHeadsets(row.headsets, search)}
                 title={row.title}
                 isAvailable={isAvailable}
             />
         ))}
-
     </>
 }
