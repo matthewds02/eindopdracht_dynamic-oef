@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import {Col} from "react-bootstrap";
 import RenderAddToCartButton from "./AddToCartButton";
 import cuttedProductName from "../utilities/cuttedProductName";
+import RenderRemoveFromCartButton from "./RemoveFromCartButton";
 
 /**
  * Rendert een kaart voor een product
@@ -18,14 +19,9 @@ function ProductCard(props) {
                 <div className="product-info">
                     <h2 className="title">{cuttedProductName(product.name)}</h2>
                     <p>{product.price}</p>
-                    {cartHeadsets ? (<button
-                        className="remove-button btn btn-secondary btn-sm mt-3"
-                        onClick={() => {
-                            setCartHeadsets(cartHeadsets.filter((p) => p.id !== product.id));
-                        }}
-                    >
-                        Remove from cart
-                    </button>) : (<RenderAddToCartButton product={product} setCartHeadsets={setCartHeadsets}/>)}
+                    {cartHeadsets ? (<RenderRemoveFromCartButton product={product} setCartHeadsets={setCartHeadsets}
+                                                                 cartHeadsets={cartHeadsets}/>) : (
+                        <RenderAddToCartButton product={product} setCartHeadsets={setCartHeadsets}/>)}
                 </div>
             </div>
         </Col>

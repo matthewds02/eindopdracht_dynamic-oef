@@ -9,13 +9,13 @@ import {Col, Row} from "react-bootstrap";
 
 // Deze functie retourneert een rij met een Headsets-component
 function HeadsetRow(props) {
-    const {headsets, title, isAvailable, setCart} = props;
+    const {headsets, title, isAvailable, setCartHeadsets} = props;
     return (
         <Row>
             {isAvailable ?
-                <Headsets headsets={availableHeadsets(headsets)} title={title} setCart={setCart}/>
+                <Headsets headsets={availableHeadsets(headsets)} title={title} setCartHeadsets={setCartHeadsets}/>
                 :
-                <Headsets headsets={headsets} title={title} setCart={setCart}/>
+                <Headsets headsets={headsets} title={title} setCartHeadsets={setCartHeadsets}/>
             }
 
         </Row>
@@ -24,7 +24,7 @@ function HeadsetRow(props) {
 
 // De HomePage-functie retourneert de hoofdpagina van de applicatie
 function HomePage(props) {
-    const {setCart} = props;
+    const {setCartHeadsets} = props;
     // Gebruik een extra useState-hook voor de beschikbaarheid
     const [isAvailable, setIsAvailable] = useState(false);
     const [search, setSearch] = useState(""); // Nieuwe useState hook voor de zoekbalk
@@ -56,7 +56,7 @@ function HomePage(props) {
                 headsets={filteredHeadsets(row.headsets, search)}
                 title={row.title}
                 isAvailable={isAvailable}
-                setCart={setCart}
+                setCartHeadsets={setCartHeadsets}
             />
         ))}
     </>
